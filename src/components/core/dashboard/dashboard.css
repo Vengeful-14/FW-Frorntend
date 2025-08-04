@@ -1,0 +1,52 @@
+/* General container styling */
+.dashboard-container {
+  display: flex; /* Enables side-by-side layout */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Prevents overflow of child elements */
+  width: 100vw;
+}
+
+.dashboard-container-1 {
+  display: flex; /* Enables side-by-side layout */
+  /* height: 100vh; Full viewport height */
+  overflow: hidden; /* Prevents overflow of child elements */
+  width: 100%;
+  flex-direction: column;
+  color: #881515;
+}
+
+/* Side navigation styling */
+.side-nav {
+  width: 250px; /* Fixed width for the side navigation */
+  background-color: #881515; /* Dark blue/gray background for side navigation */
+  color: #ecf0f1; /* Light text color */
+  display: flex;
+  flex-direction: column; /* Aligns items vertically */
+  padding: 1rem; /* Adds some padding */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the side nav */
+}
+
+/* Main content area styling */
+.main-content {
+  flex-grow: 1; /* Takes up the remaining space */
+  padding: 2rem; /* Adds padding to the content */
+  background-color: #f4f6f9; /* Light gray background for the main content */
+  overflow-y: auto; /* Allows scrolling if content overflows */
+  box-sizing: border-box;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-container {
+    flex-direction: column; /* Stacks side nav and main content vertically on small screens */
+  }
+
+  .side-nav {
+    width: 100%; /* Makes side nav full-width */
+    box-shadow: none; /* Removes shadow for a cleaner look */
+  }
+
+  .main-content {
+    padding: 1rem; /* Adjusts padding for smaller screens */
+  }
+}

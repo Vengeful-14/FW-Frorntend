@@ -1,0 +1,21 @@
+/* Ensure the parent elements occupy the full width and height */
+html, body {
+  margin: 0; /* Remove default margins */
+  padding: 0; /* Remove default paddings */
+  width: 100%; /* Ensure the body spans the full width */
+  height: 100%; /* Ensure the body spans the full height */
+  overflow: hidden; /* Prevent scrolling due to margins */
+}
+
+#root {
+  width: 100%;
+  height: 100%;
+}
+
+/* Dashboard container: Flex and Full Width */
+.dashboard-container {
+  display: flex;
+  height: 100vh; /* Full viewport height */
+  width: 100%; /* Full viewport width */
+  overflow: hidden; /* Prevent overflow */
+}

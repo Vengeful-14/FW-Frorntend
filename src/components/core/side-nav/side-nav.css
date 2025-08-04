@@ -1,0 +1,112 @@
+/* Styling for the side navigation container  */
+
+.side-nav {
+  width: 250px; /* Fixed width for the side navigation */
+  background-color: #881515; /* Dark blue-gray background */
+  color: #ecf0f1; /* Light text for better contrast */
+  height: 100vh; /* Full viewport height */
+  padding: 1rem; /* Inner padding for spacing */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  box-sizing: border-box;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+nav ul {
+  width: 100%;
+}
+
+/* Navigation styles */
+.side-nav nav ul {
+  list-style: none; /* Removes default list styling */
+  padding: 0; /* Removes default padding */
+  margin: 0; /* Removes default margin */
+}
+
+/* List item styles */
+/* Ensure li takes up the full width of the container */
+.side-nav nav ul li {
+  margin-bottom: 1rem; /* Keeps space between items */
+  width: 100%; /* Ensures li is 100% width */
+}
+
+/* Make sure the link takes up full width of its parent li */
+.side-nav nav ul li a {
+  display: block; /* Makes the link a block element */
+  width: 100%; /* Ensures it takes up the full width */
+  text-decoration: none; /* Removes underline */
+  color: #ecf0f1;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem; /* Adds spacing for better click area */
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active link should cover the entire li */
+.side-nav nav ul li a.active {
+  background-color: #1abc9c;
+  color: #ffffff;
+}
+
+/* Hover and active styles */
+.side-nav nav ul li a:hover,
+.side-nav nav ul li a:focus {
+  background-color: #881515; /* Slightly darker background on hover */
+  color: #ffffff; /* Bright white text for contrast */
+}
+
+/* Active link styling (optional, if using CSS-based active state) */
+.side-nav nav ul li a.active {
+  background-color: #1abc9c; /* Highlighted color for active link */
+  color: #ffffff; /* Bright white text */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .side-nav {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Adjusts height to content */
+    box-shadow: none; /* Removes shadow for a cleaner look */
+  }
+
+  .side-nav nav ul li {
+    margin-bottom: 0.5rem; /* Reduces spacing for compactness */
+  }
+}
+
+#dashboard {
+  margin-top: 30px;
+}
+
+/* Add this to your existing CSS */
+
+/* Active link styling */
+.side-nav nav ul li a.active-link {
+  background-color: #fff; /* Highlight color */
+  color: #881515; /* Text color for active link */
+  font-weight: bold; /* Optional: Makes the text bold for emphasis */
+}
+
+.side-nav nav ul li a.active-link:hover {
+  background-color: #000; /* Darker shade when hovering over the active link */
+  color: #ffffff; /* Keep the text white */
+}
+
+.side-nav nav ul li a:hover {
+  background-color: #ffffffc0; /* Darker shade when hovering over the active link */
+  color: #881515; /* Keep the text white */
+}
+
+/* Additional optional styling for active link */
+.side-nav nav ul li a.active-link:focus {
+  outline: none; /* Remove focus outline if not needed */
+}
+
+img {
+  width: 150px;
+}

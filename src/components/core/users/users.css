@@ -1,0 +1,163 @@
+/* Container for the whole user management page */
+.users-container {
+  max-width: 600px; /* Limit the form width */
+  margin: 0 auto; /* Center the form */
+  padding: 2rem;
+  background-color: #f9f9f9; /* Light background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Header styling */
+.users-container h1 {
+  font-size: 2rem;
+  color: #2c3e50; /* Dark color for the header */
+  margin-bottom: 1.5rem;
+  text-align: center; /* Center the title */
+}
+
+/* Form styles */
+.users-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Space between form elements */
+}
+
+/* Label styling */
+.users-container label {
+  font-size: 1rem;
+  color: #2c3e50;
+  margin-bottom: 0.5rem; /* Space between label and input */
+}
+
+/* Input field styling */
+.users-container input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #bdc3c7; /* Light border */
+  border-radius: 4px; /* Rounded corners for input fields */
+  width: 100%; /* Full width */
+  box-sizing: border-box; /* Include padding and border in the width */
+  transition: border 0.3s ease; /* Smooth border color change */
+}
+
+/* Input field focus effect */
+.users-container input:focus {
+  border-color: #1abc9c; /* Green border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Password input container for the View Password button */
+.password-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Button to toggle password visibility */
+.view-password-button {
+  position: absolute;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #1abc9c;
+  font-size: 0.9rem;
+  cursor: pointer;
+  width: 20px;
+}
+
+.view-password-button:hover {
+  text-decoration: underline;
+}
+
+/* Error message styling */
+.users-container .error-message {
+  font-size: 1rem;
+  color: #e74c3c; /* Red for error messages */
+  text-align: center; /* Center the error message */
+}
+
+/* Button styling */
+.users-container button {
+  padding: 0.8rem 1.5rem;
+  background-color: #1abc9c; /* Green background */
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease;
+  align-self: center; /* Center the button */
+}
+
+/* Button hover effect */
+.users-container button:hover {
+  background-color: #16a085; /* Darker green on hover */
+}
+
+/* Button disabled effect */
+.users-container button:disabled {
+  background-color: #bdc3c7; /* Light gray */
+  cursor: not-allowed; /* Disable pointer cursor */
+}
+
+/* Confirmation dialog */
+/* Overlay that covers the entire viewport */
+.confirm-dialog-overlay {
+  position: fixed; /* Fixed to the viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  z-index: 1000; /* Ensure it's above the rest of the content */
+}
+
+/* The actual modal box */
+.confirm-dialog {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow */
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Button styles */
+.confirm-dialog button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.confirm-dialog button:hover {
+  background-color: #16a085;
+}
+
+/* Adjusted button styling for confirmation dialog */
+.users-container .confirm-dialog button {
+  padding: 0.8rem 1.5rem;
+  background-color: #1abc9c;
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0.5rem;
+}
+
+.users-container .confirm-dialog button:hover {
+  background-color: #16a085;
+}
+
+.submitBtn {
+  width: 200px;
+}
+
+/* additional */

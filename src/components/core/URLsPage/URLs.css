@@ -1,0 +1,179 @@
+.urls-container {
+  padding: 20px;
+}
+
+.mybody {
+  display: flex;
+  width: 100%;
+  gap: 3em;
+}
+
+.add-url {
+  /* display: flex; */
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.add-url input {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  width: 98%;
+  /* flex: 1; */
+}
+
+.add-url input:focus {
+  border-color: #881515;
+  color: #881515;
+}
+
+.add-url button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: #881515;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 99.7%;
+}
+
+.add-url button:hover {
+  background-color: #b82020;
+}
+
+.urls-list {
+  margin-top: 20px;
+  width: 50%;
+}
+
+.urls-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.urls-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.blocked_buttons {
+  width: 200px;
+  align-items: center;
+}
+
+.edit-btn {
+  width: 30%;
+}
+
+.delete-btn {
+  width: 30%;
+  margin-right: 5%;
+  background-color: crimson;
+}
+
+li {
+  display: flex;
+  align-items: center;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Modal buttons */
+.modal-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  margin: 2%;
+}
+
+.confirm-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.cancel-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.modal-buttons button:hover {
+  opacity: 0.9;
+}
+
+/* Loader spinner */
+button:disabled {
+  position: relative;
+}
+
+button:disabled::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border: 4px solid #881515;
+  border-top: 4px solid #881515;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  transform: translate(-20%, -20%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.edit-btn {
+  border: 1px solid #881515;
+  background-color: #fff;
+  color: #881515;
+  outline: none;
+}
+
+.edit-btn:hover {
+  color: #fff;
+}
+
+h2 {
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
