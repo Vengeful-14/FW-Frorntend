@@ -7,12 +7,9 @@ import "./dashboard-home.css"; // Import CSS for the dashboard
 const DashboardHome: React.FC = () => {
   const [urlCount, setUrlCount] = useState<number>(0);
   const [portCount, setPortCount] = useState<number>(0);
-  const [loading, setLoading] = useState<boolean>(true); // Loading state
-  const [error, setError] = useState<string>(""); // To store any error message
 
   const fetchData = async () => {
     try {
-      setLoading(true); // Start loading
       const urlsSnapshot = await getDocs(collection(db, "ipaddress")); // Fetch URLs
       const portsSnapshot = await getDocs(collection(db, "PORTs")); // Fetch Ports
 
@@ -34,11 +31,8 @@ const DashboardHome: React.FC = () => {
       // // Set the counts based on Firestore collection sizes
       // setUrlCount(urlsSnapshot.size);
       // setPortCount(portsSnapshot.size);
-      setLoading(false); // Stop loading
     } catch (error) {
       console.error("Error fetching data:", error);
-      setError("There was an error fetching data from the database.");
-      setLoading(false); // Stop loading on error
     }
   };
 
