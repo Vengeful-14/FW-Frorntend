@@ -12,10 +12,8 @@ import { FaTrash, FaEdit } from "react-icons/fa"; // Use icons for delete and ed
 import "./urls.css";
 
 const Urls: React.FC = () => {
-  const [url, setUrl] = useState("");
   const [ipaddress, setIPaddress] = useState("");
   const [domain, setDomain] = useState("");
-  const [urlsList, setUrlsList] = useState<any[]>([]); // Store URLs along with their ID
   const [ipaddress_list, setipaddress_list] = useState<any[]>([]);
   const [error, setError] = useState("");
   const [editingId, setEditingId] = useState<string | null>(null); // Track which URL is being edited
@@ -113,12 +111,6 @@ const Urls: React.FC = () => {
     } else {
       setError("IP address or domain cannot be empty.");
     }
-  };
-
-  // Handle Delete URL (Show confirmation modal)
-  const handleDeleteUrl = (id: string) => {
-    setUrlToDelete(id); // Store URL to delete
-    setIsModalOpen(true); // Open confirmation modal
   };
 
   const allowIP = async (id: string) => {
