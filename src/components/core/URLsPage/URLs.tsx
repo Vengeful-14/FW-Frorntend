@@ -9,7 +9,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../../../services/firebase.service"; // Adjust path based on your setup
 import { FaTrash, FaEdit } from "react-icons/fa"; // Use icons for delete and edit buttons
-import "./urls.css";
+import "./URLs.css";
 
 const Urls: React.FC = () => {
   const [ipaddress, setIPaddress] = useState("");
