@@ -5,7 +5,8 @@ import Dashboard from "./components/core/dashboard/dashboard";
 import DashboardHome from "./components/core/dashboard-home/dashboard-home";
 import Urls from "./components/core/URLsPage/URLs";
 import Ports from "./components/core/PortsPage/ports";
-import Logs from "./components/core/logs";
+// import Logs from "./components/core/logs";
+import Logs from './components/core/logs/logs';
 import Users from "./components/core/users/users";
 
 const App: React.FC = () => {
