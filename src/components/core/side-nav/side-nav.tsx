@@ -1,77 +1,4 @@
-// // import React from "react";
-// // import { Link } from "react-router-dom";
-// // import "./side-nav.css";
 
-// // const SideNav: React.FC = () => {
-// //   return (
-// //     <aside className="side-nav">
-// //       <nav>
-// //         <ul>
-// //           <li id="dashboard">
-// //             <Link to="/dashboard">Dashboard</Link>
-// //           </li>
-// //           <li>
-// //             <Link to="/dashboard/urls">URLs</Link>
-// //           </li>
-// //           <li>
-// //             <Link to="/dashboard/ports">Ports</Link>
-// //           </li>
-// //         </ul>
-// //       </nav>
-// //     </aside>
-// //   );
-// // };
-
-// // export default SideNav;
-
-// import React from "react";
-// import { NavLink } from "react-router-dom";
-// import "./side-nav.css";
-
-// const SideNav: React.FC = () => {
-//   return (
-//     <aside className="side-nav">
-//       <nav>
-//         <ul>
-//           <li id="dashboard">
-//             <NavLink
-//               to="/dashboard"
-//               className={({ isActive }) => (isActive ? "active-link" : "")}
-//             >
-//               Dashboard
-//             </NavLink>
-//           </li>
-//           <li>
-//             <NavLink
-//               to="/dashboard/urls"
-//               className={({ isActive }) => (isActive ? "active-link" : "")}
-//             >
-//               URLs
-//             </NavLink>
-//           </li>
-//           <li>
-//             <NavLink
-//               to="/dashboard/ports"
-//               className={({ isActive }) => (isActive ? "active-link" : "")}
-//             >
-//               Ports
-//             </NavLink>
-//           </li>
-//           <li>
-//             <NavLink
-//               to="/dashboard/users"
-//               className={({ isActive }) => (isActive ? "active-link" : "")}
-//             >
-//               Users
-//             </NavLink>
-//           </li>
-//         </ul>
-//       </nav>
-//     </aside>
-//   );
-// };
-
-// export default SideNav;
 
 import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -118,6 +45,14 @@ const SideNav: React.FC = () => {
               className={({ isActive }) => (isActive ? "active-link" : "")}
             >
               Ports
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/dashboard/logs"
+              className={({ isActive }) => (isActive ? "active-link" : "")}
+            >
+              Logs
             </NavLink>
           </li>
           {/* <li>
