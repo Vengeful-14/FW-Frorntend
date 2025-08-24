@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { collection, getDocs, query, orderBy, limit, startAfter } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  query,
+  orderBy,
+  limit,
+  startAfter,
+} from "firebase/firestore";
 import { db } from "../../../services/firebase.service";
 import "./logs.css";
 
@@ -14,11 +21,15 @@ const Logs: React.FC = () => {
   const [hasNextPage, setHasNextPage] = useState(false);
 
   // Fetch logs from Firestore with pagination
-  const fetchLogs = async (page: number = 1, size: number = pageSize, startAfterDoc?: any) => {
+  const fetchLogs = async (
+    page: number = 1,
+    size: number = pageSize,
+    startAfterDoc?: any
+  ) => {
     try {
       setLoading(true);
       setError("");
-      
+
       let logsQuery = query(
         collection(db, "logs"),
         orderBy("timestamp", "desc"),
@@ -31,7 +42,7 @@ const Logs: React.FC = () => {
 
       const querySnapshot = await getDocs(logsQuery);
       const docs = querySnapshot.docs;
-      
+
       // Check if there's a next page
       const hasMore = docs.length > size;
       const logsData = docs.slice(0, size).map((doc) => ({
@@ -42,7 +53,7 @@ const Logs: React.FC = () => {
       setLogs(logsData);
       setHasNextPage(hasMore);
       setLastDoc(docs[docs.length - 2] || null); // Set the last doc for next page
-      
+
       // Update total logs count (this is approximate for large datasets)
       if (page === 1) {
         setTotalLogs(logsData.length + (hasMore ? 1 : 0));
@@ -81,15 +92,12 @@ const Logs: React.FC = () => {
     }
   };
 
-
   const formatTimestamp = (timestamp: any) => {
     if (timestamp?.toDate) {
       return timestamp.toDate().toLocaleString();
     }
     return new Date(timestamp).toLocaleString();
   };
-
-
 
   if (loading) {
     return (
@@ -128,7 +136,7 @@ const Logs: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="logs-table-container">
         <table className="logs-table">
           <thead>
@@ -157,11 +165,9 @@ const Logs: React.FC = () => {
                   <td className="timestamp-cell">
                     {formatTimestamp(log.timestamp)}
                   </td>
-                  <td className="domain-cell">
-                    {log.domain || 'N/A'}
-                  </td>
+                  <td className="domain-cell">{log.domain || "N/A"}</td>
                   <td className="source-ip-cell">
-                    {log.source_ip || log.sourceIP || 'N/A'}
+                    {log.source_ip || log.sourceIP || "N/A"}
                   </td>
                 </tr>
               ))
@@ -173,14 +179,15 @@ const Logs: React.FC = () => {
       <div className="pagination">
         <div className="pagination-info">
           <span>
-            Showing {((currentPage - 1) * pageSize) + 1} to {Math.min(currentPage * pageSize, totalLogs)} of {totalLogs} logs
+            Showing {(currentPage - 1) * pageSize + 1} to{" "}
+            {Math.min(currentPage * pageSize, totalLogs)} of {totalLogs} logs
           </span>
         </div>
         <div className="pagination-controls">
           <button
             className="pagination-btn"
             onClick={() => handlePageChange(currentPage - 1)}
-            disabled={currentPage === 1}
+            aria-disabled={currentPage === 1}
           >
             Previous
           </button>
@@ -188,7 +195,7 @@ const Logs: React.FC = () => {
           <button
             className="pagination-btn"
             onClick={() => handlePageChange(currentPage + 1)}
-            disabled={!hasNextPage}
+            aria-disabled={!hasNextPage}
           >
             Next
           </button>
